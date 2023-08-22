@@ -15,7 +15,6 @@ function getEntryPoints() {
 }
 
 module.exports = {
-    mode: 'development',
     entry: getEntryPoints(),
     output: {
         /* Para ver donde tirar el lenguaje de maquina */
@@ -24,4 +23,13 @@ module.exports = {
     },
     watch: true, /* Esto es para usar live server */
     devtool: 'source-map', /* Esto es para crear un archivo para depurar el lenguaje de maquina */
+    resolve: {
+        fallback: {
+            path: require.resolve("path-browserify"),
+            os: require.resolve("os-browserify/browser"),
+            crypto: require.resolve("crypto-browserify"),
+            stream: require.resolve("stream-browserify")
+        },
+    },
+    
 };

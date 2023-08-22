@@ -1,3 +1,4 @@
+Dist
 node_modules
 .vscode/
-.env
+Src/ts/firebaseConfig.ts
